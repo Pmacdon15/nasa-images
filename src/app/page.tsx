@@ -30,19 +30,20 @@ export default async function NasaImagesPage(props: PageProps<'/'>) {
 		<main className="mx-auto min-h-screen max-w-7xl p-8">
 			<CollectionsHeader />
 
-			<CollectionsParent
-				child1={
-					<CollectionsDisplayImages
-						collectionsPromise={collectionsImagesPromise}
-					/>
-				}
-				child2={
-					<CollectionsDisplayVideos
-						collectionsPromise={collectionsVideosPromise}
-					/>
-				}
-			/>
-			<Suspense></Suspense>
+			<Suspense>
+				<CollectionsParent
+					child1={
+						<CollectionsDisplayImages
+							collectionsPromise={collectionsImagesPromise}
+						/>
+					}
+					child2={
+						<CollectionsDisplayVideos
+							collectionsPromise={collectionsVideosPromise}
+						/>
+					}
+				/>
+			</Suspense>
 		</main>
 	)
 }

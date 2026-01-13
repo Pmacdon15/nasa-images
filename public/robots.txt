@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.nasamedia.patmac.ca
+
+# Sitemaps
+Sitemap: https://www.nasamedia.patmac.ca/sitemap.xml
