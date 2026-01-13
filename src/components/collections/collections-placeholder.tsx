@@ -1,9 +1,8 @@
-export default async function CollectionsPlaceHolder({
-	collectionsLengthPromise,
+export default function CollectionsPlaceHolder({
+	collectionsLength,
 }: {
-	collectionsLengthPromise: Promise<number>
+	collectionsLength: number
 }) {
-	const collectionsLength = await collectionsLengthPromise
 	return (
 		<>
 			{collectionsLength === 0 && (

@@ -24,7 +24,8 @@
 			},
 			"recommended": true,
 			"a11y": {
-				"useSemanticElements": "off"
+				"useSemanticElements": "off",
+				"useMediaCaption": "off"
 			},
 			"suspicious": {
 				"noArrayIndexKey": "off",

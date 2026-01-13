@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
-import SearchInput from './search-bar/search-input'
-import SearchInputFallback from './search-bar/search-input-fallback'
+import SearchInput from '../search-bar/search-input'
+import SearchInputFallback from '../search-bar/search-input-fallback'
 
 export default function CollectionsHeader() {
 	return (

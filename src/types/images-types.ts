@@ -7,6 +7,16 @@ export type NasaImage = {
 	center: string
 }
 
+export type NasaVideo = {
+	id: string
+	title: string
+	description: string
+	previewImageUrl: string | null
+	videoUrl: string | null
+	date: string
+	center: string
+}
+
 export type NasaApiItem = {
 	href: string
 	data: {
