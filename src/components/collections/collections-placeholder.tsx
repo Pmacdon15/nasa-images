@@ -6,7 +6,7 @@ export default function CollectionsPlaceHolder({
 	return (
 		<>
 			{collectionsLength === 0 && (
-				<div className="space-y-6 py-32 text-center">
+				<div className="space-y-6 py-32 text-center col-span-3">
 					<div className="animate-pulse text-6xl text-slate-700">
 						??
 					</div>
