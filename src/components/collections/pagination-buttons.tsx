@@ -25,6 +25,7 @@ export default function PaginationButtons() {
 			>
 				Back
 			</button>
+			Page {page}
 			<button
 				className="rounded-md bg-accent p-3 font-bold text-slate-900 shadow-lg transition-all duration-300 hover:bg-white hover:text-slate-900 active:scale-95"
 				onClick={handleNext}

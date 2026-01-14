@@ -30,8 +30,8 @@ export async function fetchVideos(
 	q: string = 'apollo 11',
 	page: number = 1,
 ): Promise<NasaVideo[]> {
-	'use cache'
-	cacheTag(`videos-page-${page}-query${q}`)
+	'use cache: remote'
+	// cacheTag(`videos-page-${page}-query${q}`)
 
 	const res = await fetch(
 		`https://images-api.nasa.gov/search?q=${encodeURIComponent(
