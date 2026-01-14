@@ -6,8 +6,7 @@ export async function fetchImages(
 	page: number = 1,
 ): Promise<NasaImage[]> {
 	'use cache: remote'
-	// cacheTag(`images-page-${page}-query${q}`)
-	cacheLife({ expire: 3600 })
+	// cacheTag(`images-page-${page}-query${q}`)	
 	const res = await fetch(
 		`https://images-api.nasa.gov/search?q=${encodeURIComponent(
 			q,
