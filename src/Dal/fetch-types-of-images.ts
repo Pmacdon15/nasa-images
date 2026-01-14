@@ -1,4 +1,3 @@
-import { cacheLife } from 'next/cache'
 import type { NasaApiItem, NasaImage } from '@/types/images-types'
 
 export async function fetchImages(
@@ -6,7 +5,7 @@ export async function fetchImages(
 	page: number = 1,
 ): Promise<NasaImage[]> {
 	'use cache: remote'
-	// cacheTag(`images-page-${page}-query${q}`)	
+	// cacheTag(`images-page-${page}-query${q}`)
 	const res = await fetch(
 		`https://images-api.nasa.gov/search?q=${encodeURIComponent(
 			q,

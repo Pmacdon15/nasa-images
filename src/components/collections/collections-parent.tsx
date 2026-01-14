@@ -1,34 +1,51 @@
 'use client'
 
 import { Activity, Suspense, useState } from 'react'
-import ImageOrVideoButtons from './image-or-video'
 import PaginationButtons from './pagination-buttons'
+import TypeOfButtons from './type-of-buttons'
 
 export default function CollectionsParent({
 	child1,
 	child2,
+	child3,
 }: {
 	child1: React.ReactNode
 	child2: React.ReactNode
+	child3: React.ReactNode
 }) {
-	const [imageOrVideo, setImageOrVIdeo] = useState<'image' | 'video'>('image')
+	const [typeOfDisplay, setTypeOfDisplay] = useState<
+		'image' | 'video' | 'mars-weather'
+	>('image')
 	// const [page, setPage] = useQueryParam('page', '1')
 	return (
 		<div className="flex flex-col">
 			<Suspense>
-				<ImageOrVideoButtons setImageOrVideo={setImageOrVIdeo} />
+				<TypeOfButtons setTypeOf={setTypeOfDisplay} />
 			</Suspense>
-			{/* <PaginationButtons /> */}
-			<Activity mode={imageOrVideo === 'image' ? 'visible' : 'hidden'}>
+
+			<Activity mode={typeOfDisplay === 'image' ? 'visible' : 'hidden'}>
 				<Suspense>{child1}</Suspense>
-				{/* {child1} */}
 			</Activity>
-			<Activity mode={imageOrVideo !== 'image' ? 'visible' : 'hidden'}>
+
+			<Activity mode={typeOfDisplay === 'video' ? 'visible' : 'hidden'}>
 				<Suspense>{child2}</Suspense>
-				{/* {child2} */}
 			</Activity>
+
+			<Activity
+				mode={typeOfDisplay === 'mars-weather' ? 'visible' : 'hidden'}
+			>
+				{/* <Suspense>{child3}</Suspense> */}
+				{child3}
+			</Activity>
+
 			<Suspense>
-				<PaginationButtons />
+				<Activity
+					mode={
+						typeOfDisplay !== 'mars-weather' ? 'visible' : 'hidden'
+					}
+				>
+					<PaginationButtons />
+				</Activity>
 			</Suspense>
 		</div>
 	)

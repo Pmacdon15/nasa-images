@@ -4,8 +4,8 @@ import CollectionsDisplayVideos from '@/components/collections/collections-displ
 import CollectionsHeader from '@/components/collections/collections-header'
 import CollectionsParent from '@/components/collections/collections-parent'
 import { fetchImages } from '@/Dal/fetch-types-of-images'
-// import { fetchImages } from '@/Dal/fetch-types-of-images'
 import { fetchVideos } from '@/Dal/fetch-videos'
+import MarsWeather from '@/components/mars-weather/MarsWeather'
 
 export default async function NasaImagesPage(props: PageProps<'/'>) {
 	const collectionsVideosPromise = props.searchParams.then((params) =>
@@ -30,6 +30,12 @@ export default async function NasaImagesPage(props: PageProps<'/'>) {
 		<main className="mx-auto min-h-screen max-w-7xl p-8">
 			<CollectionsHeader />
 
+			<Suspense
+				fallback={
+					<div className="mb-8 h-50 animate-pulse rounded-2xl bg-mars-rust/5" />
+				}
+			></Suspense>
+
 			<Suspense>
 				<CollectionsParent
 					child1={
@@ -42,6 +48,7 @@ export default async function NasaImagesPage(props: PageProps<'/'>) {
 							collectionsPromise={collectionsVideosPromise}
 						/>
 					}
+					child3={<MarsWeather />}
 				/>
 			</Suspense>
 		</main>

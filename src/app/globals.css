@@ -7,12 +7,19 @@
 	--accent-glow: rgba(56, 189, 248, 0.3);
 	--card-bg: rgba(15, 23, 42, 0.8);
 	--card-border: rgba(51, 65, 85, 0.5);
+	--mars-red: #ef4444;
+	--mars-orange: #f97316;
+	--mars-rust: #9a3412;
+	--mars-glow: rgba(249, 115, 22, 0.3);
 }
 
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
 	--color-accent: var(--accent);
+	--color-mars-red: var(--mars-red);
+	--color-mars-orange: var(--mars-orange);
+	--color-mars-rust: var(--mars-rust);
 	--font-sans: "Inter", system-ui, sans-serif;
 }
 

@@ -1,4 +1,3 @@
-import { cacheTag } from 'next/cache'
 import type { NasaApiItem, NasaVideo } from '@/types/images-types'
 
 async function getVideoUrl(collectionUrl: string): Promise<string | null> {
