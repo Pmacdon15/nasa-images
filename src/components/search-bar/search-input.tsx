@@ -7,7 +7,7 @@ export default function SearchInput() {
 	const [value, setValue] = useQueryParam('search', 'nebula')
 	const [input, setInput] = useState(value || '')
 
-	console.log({ value, input })
+	// console.log({ value, input })
 
 	return (
 		<div className="group relative mx-auto max-w-xl">
