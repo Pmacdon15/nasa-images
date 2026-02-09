@@ -1,4 +1,4 @@
-import { cacheTag } from 'next/cache'
+import { cacheLife, cacheTag } from 'next/cache'
 import type { NasaApiItem, NasaVideo } from '@/types/images-types'
 
 async function getVideoUrl(collectionUrl: string): Promise<string | null> {
@@ -31,6 +31,7 @@ export async function fetchVideos(
 	page: number = 1,
 ): Promise<NasaVideo[]> {
 	'use cache: remote'
+	cacheLife("hours")
 	// cacheTag(`videos-page-${page}-query${q}`)
 
 	const res = await fetch(
